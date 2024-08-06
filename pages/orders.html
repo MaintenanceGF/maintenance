@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pedidos especiales</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mario Juarez">
+        <link rel="stylesheet" href="../styles/style_resetcss.css">
+        <link rel="stylesheet" href="../styles/style_orders.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="process">
+                <div class="container1">
+                    <img class="logo1" src="../images/Logo.jpg">
+                </div>
+                <div class="container2">
+                    <h1>Pedidos especiales</h1>
+                    <p>Lista de pedidos</p>
+                </div>
+            </div>
+            <div class="container5">
+                <nav>
+                    <ul>
+                        <li class="li1">
+                            <a href="javascript:open_form()">
+                            <img src="../images/add.svg">
+                            <p>Agregar</p>
+                            </a>
+                        </li>
+                        <li class="li2">
+                            <img src="../images/delete.svg">
+                            <p>Eliminar</p>
+                        </li>
+                        <li class="li3">
+                            <img src="../images/edit.svg">
+                            <p>Editar</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="form01" class="container3">
+            <form id="form1">
+
+                <p class="title_order">Nuevo pedido</p>
+
+                <label class="record_name">Fecha de ingreso</label>
+                <input class="record" id="request_date" name="request_date" type="date">
+
+                <label class="record_name">Numero de vale</label>
+                <input class="record" id="voucher" name="voucher" type="number">
+
+                <label class="record_name">Codigo</label>
+                <input class="record" id="code" name="code" type="text">
+
+                <label class="record_name">Cantidad</label>
+                <input class="record" id="quantity" name="quantity" type="number">
+
+                <label class="record_name">Linea</label>
+                <input class="record" id="line" name="line" type="text">
+
+                <label class="record_name">Solicitante</label>
+                <input class="record" id="requester" name="requester" type="text">
+
+                <label class="record_name">Autorizador</label>
+                <input class="record" id="authorized" name="authorized" type="text">
+
+                <label class="record_name">Comprador</label>
+                <input class="record" id="buyer" name="buyer" type="text">
+
+                <label class="record_name">Nota</label>
+                <input class="record" id="note" name="note" type="text">
+
+                <div class="buttons">                    
+                        <input id="button1" type="button" onclick="addData()" value="Guardar">                                                                
+                        <input id="button2" type="button" onclick="close_form()" value="Cancelar">
+                </div>
+            </form>
+        </div>
+        <div class="container4">
+            <table id="table1">
+                <thead>
+                    <tr class="header_table">
+                        <th class="t_h">No. de vale</th>
+                        <th class="t_h">Codigo</th>
+                        <th class="t_h">Descripcion</th>
+                        <th class="t_h">Cantidad</th>
+                        <th class="t_h">Linea</th>
+                        <th class="t_h">Requisicion</th>
+                        <th class="t_h">PO</th>
+                        <th class="t_h">Fecha de solicitud</th>
+                        <th class="t_h">Fecha de llegada</th>
+                        <th class="t_h">Proveedor</th>
+                        <th class="t_h">Solicitante</th>
+                        <th class="t_h">Autorizador</th>
+                        <th class="t_h">Comprador</th>
+                        <th class="t_h">Nota</th>
+                        <th class="t_h">Avace</th>
+                        <th class="t_h">Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                    <tr>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                        <td class="rowd"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="../src/orders.js"></script>
+    </body>
+    
+</html>
+<script src="../src/load_orders.js"></script>
+
+
+
+
+

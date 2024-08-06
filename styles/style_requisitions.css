@@ -1,0 +1,206 @@
+header {
+    background: linear-gradient(rgb(6, 32, 57), rgb(10, 48, 83));
+    margin: 7px;
+    border-radius: 10px;
+    width: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo1 {
+    border-radius: 2px;
+    height: 50px;
+}
+
+h1{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+body {
+    background-color: rgb(5, 9, 20);
+    color:white;
+    font-family: 'Segoe UI';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+.container2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    p {
+        margin-top: 3px;
+        font-size: 12px;
+    }
+}
+
+.container3 {
+    background: linear-gradient(rgb(6, 32, 57), rgb(10, 48, 83));
+    border-radius: 10px;
+    width: 20%;
+    margin-top: 150px;
+    margin-left: 40%;
+    margin-right: 30%;
+    position: absolute;
+    visibility: hidden;
+}
+
+nav li {
+    display: inline-block;
+    font-size: 11px;
+    margin: 10px;
+    background: linear-gradient(rgb(29, 60, 96), rgb(29, 60, 96));
+    padding: 4px 5px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 85px;
+}
+
+nav li:hover {
+    background: linear-gradient( rgb(20, 76, 116),  rgb(94, 166, 218));
+    transform: scale(1.1);
+    transition: 300ms;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+}
+
+.li1 img, p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 3px;
+    align-items: flex-start;
+}
+
+.li2 img, p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 3px;
+    align-items: flex-start;
+}
+
+.li3 img, p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 3px;
+    align-items: flex-start;
+}
+
+#form1 {
+    display: flex;
+    flex-direction: column;
+    padding: 50px; 
+}
+
+.title_order{
+    margin-bottom: 40px;
+    font-weight: bolder;
+}
+
+input[type="date"] {
+    font-family: 'Arial';
+    background-color: rgb(223, 225, 227);
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: black;
+    font-size: 11px;
+    height: 20px;
+}
+
+.record_name {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.record{
+    background-color: rgb(223, 225, 227);
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: black;
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#button1 {
+    background: linear-gradient(rgb(5, 18, 34), rgb(29, 64, 104));
+    border: none;
+    color: white;
+    width: 70px;
+    margin-right: 60px;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+#button2 {
+    background-color: rgb(173, 26, 9);
+    border: none;
+    color: white;
+    width: 70px;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+#button1:hover {
+    background: linear-gradient( rgb(20, 76, 116),  rgb(94, 166, 218));
+    transform: scale(1.1);
+    transition: 300ms;
+}
+
+#button2:hover {
+    background-color: red;
+    transform: scale(1.1);
+    transition: 300ms;
+}
+
+.container4 {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.header_table {
+    background-color: rgb(53, 62, 73);
+}
+
+.t_h {
+    padding: 6px 20px;
+    border: solid 3px  rgb(5, 9, 20) ;
+    font-size: 12px;
+}
+
+thead {
+    border-radius: 3px;
+}
+
+tbody td {
+    padding: 6px 20px;
+    background-color: rgb(199, 199, 209);
+    border: solid 3px  rgb(5, 9, 20) ;
+    font-size: 10.5px;
+    color:black;
+}
+
+.rowd {
+    display: none;
+}

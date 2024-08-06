@@ -1,0 +1,134 @@
+header {
+    background: linear-gradient(rgb(6, 32, 57), rgb(10, 48, 83));;
+    margin: 7px;
+    border-radius: 10px;
+    width: auto;
+    padding: 20px;
+}
+
+.header_section1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+.header_section2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.header_section2 p {
+    font-size: 12px;
+    margin-top: 5px;
+} 
+
+.logo1 {
+    height: 50px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+body {
+    background-color: rgb(5, 9, 20);
+    color:white;
+    font-family: 'Segoe UI';
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.list1 {
+    margin: 150px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.process {
+    background: linear-gradient(rgb(6, 32, 57), rgb(10, 48, 83));
+    display: inline-block;
+    padding: 20px;
+    border-radius: 7px;
+    margin: 15px;
+    width: 30%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.illustration {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.process_section {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.process:hover {
+    transition: 1s;
+    transform: scale(1.1);
+    background: linear-gradient(rgb(0, 174, 255),rgb(0, 119, 255));
+    p {
+        color: white;
+    }
+}
+
+.process p {
+    font-size: 12px;
+    color: rgb(158, 154, 154);
+}
+
+a {
+    text-decoration: none;
+}
+
+#icon1 {
+    height: 45px;
+    margin-right: 20px;
+}
+
+#icon2 {
+    height: 45px;
+    margin-right: 20px;
+}
+
+#icon3 {
+    height: 45px;
+    margin-right: 20px;
+}
+
+#icon4 {
+    height: 45px;
+    margin-right: 20px;
+}
+
+#icon5 {
+    height: 45px;
+    margin-right: 20px;
+}
+
+footer {
+    background-color: rgb(22, 22, 22);
+    margin: 7px;
+    border-radius: 10px;
+    width: auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 10px;
+    margin-top: auto;
+}
