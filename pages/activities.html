@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bitacora</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mario Juarez">
+        <link rel="stylesheet" href="../css/resetcss.css">
+        <link rel="stylesheet" href="../css/activities.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body onload="load_activities()">
+        <header> 
+            <div>
+                <div class="header-logo">
+                    <img src="../images/Logo.jpg">
+                </div>
+                <div class="header-text">
+                    <h1>Bitacora</h1>
+                    <p>Monitoreo de actividad</p>
+                </div>  
+            </div>  
+        </header>
+        <div id="id-container-read" class="container-read"> 
+            <table id="table1"> 
+                <thead>
+                    <tr class="header_row">
+                        <th class="column-name">Fecha y hora</th>
+                        <th class="column-name">Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                    <tr>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="../src/activities.js"></script>
+    </body>
+</html>

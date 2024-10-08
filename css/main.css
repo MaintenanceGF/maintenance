@@ -1,0 +1,130 @@
+header {
+    background: linear-gradient(rgb(6, 32, 57), rgb(10, 48, 83));
+    margin: 7px;
+    border-radius: 10px;
+    width: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+h2{
+    font-size: 16px;
+}
+
+body {
+    background-color: rgb(5, 9, 20);
+    color:white;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.header-logo img {
+    border-radius: 2px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.header-logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+.header-text {
+    display: block;
+    p {
+        margin-top: 3px;
+        font-size: 12px;
+    };
+}
+
+.list1 {
+    margin: 150px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.process {
+    background: linear-gradient(rgb(6, 32, 57), rgb(10, 48, 83));
+    display: inline-block;
+    padding: 20px;
+    border-radius: 7px;
+    margin: 15px;
+    width: 30%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.illustration {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.process_section {
+    display: inline-block;
+    vertical-align: middle;
+    p {
+        margin-top: 5px;
+    };
+}
+
+.process:hover {
+    transition: 1s;
+    transform: scale(1.05);
+    background: linear-gradient(rgb(0, 174, 255),rgb(0, 119, 255));
+    p {
+        color: white;
+    }
+}
+
+.process p {
+    font-size: 12px;
+    color: rgb(158, 154, 154);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#icon1 {
+    height: 45px;
+    margin-right: 20px;
+}
+
+#icon2 {
+    height: 45px;
+    margin-right: 20px;
+}
+
+#icon3 {
+    height: 45px;
+    margin-right: 20px;
+}
+
+#icon4 {
+    height: 45px;
+    margin-right: 20px;
+}
+
+#icon5 {
+    height: 45px;
+    margin-right: 20px;
+}

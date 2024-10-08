@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Almacen de mantenimiento</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mario Juarez">
+        <link rel="stylesheet" href="../css/resetcss.css">
+        <link rel="stylesheet" href="../css/warehouse.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body onload="load_warehouse()">
+        <header> 
+            <div>
+                <div class="header-logo">
+                    <img src="../images/Logo.jpg">
+                </div>
+                <div class="header-text">
+                    <h1>Almacen de mantenimiento</h1>
+                    <p>Inventario</p>
+                </div>  
+            </div>  
+            <div class="container-operations">
+                <nav>
+                    <ul>
+                        <li class="action1">
+                            <a href="javascript:create_form()">
+                            <img src="../images/add.svg">
+                            <p>Agregar</p>
+                            </a>
+                        </li>
+                        <li class="action2">
+                            <a href="javascript:delete_form()">
+                            <img src="../images/delete.svg">
+                            <p>Eliminar</p>
+                            </a>
+                        </li>
+                        <li class="action3">
+                            <a href="javascript:update_form()">
+                            <img src="../images/b_actualizar.svg">
+                            <p>Editar</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="id-container-create" class="container-create"> 
+            <p class="create-title">Nuevo item</p>
+            <form id="form1">
+                <div class="create-section">
+                    <label class="create-labels">Ubicacion</label>
+                    <input class="create-inputs" id="c-location" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Codigo</label>
+                    <input class="create-inputs" id="c-code" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Descripcion</label>
+                    <input class="create-inputs" id="c-description" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Cantidad</label>
+                    <input class="create-inputs" id="c-quantity" type="number">
+                </div>
+                <div>
+                    <ul class="create-button-section">
+                        <li id="create-button1" class="create-buttons">
+                            <a href="javascript:create()">
+                            <img src="../images/b_guardar.svg">
+                            <p>Guardar</p> 
+                            </a>
+                        </li>
+                        <li id="create-button2" class="create-buttons">
+                            <a href="javascript:cancel_formCreate()">
+                            <img src="../images/b_cancelar.svg">
+                            <p>Cancelar</p>
+                            </a> 
+                        </li>
+                    </ul>                  
+                </div>
+            </form>
+        </div>
+        <div id="id-container-read" class="container-read"> 
+            <table id="table1"> 
+                <thead>
+                    <tr class="header_row">
+                        <th class="column-name">No.</th>
+                        <th class="column-name">Ubicacion</th>
+                        <th class="column-name">Codigo</th>
+                        <th class="column-name">Descripcion</th>
+                        <th class="column-name">Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                    <tr>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="id-container-update" class="container-update">
+            <p class="update-title">Actualizar registro</p>
+            <form class="update-form">
+                <div>
+                    <div class="update-section">
+                        <label class="update-labels">No.</label>
+                        <input class="update-inputs" id="u-no" type="number">
+                    </div> 
+                    <div class="update-section">  
+                        <label class="update-labels">Ubicacion</label>
+                        <input class="update-inputs" id="u-location" type="text">
+                    </div>
+                    <div class="update-section">  
+                        <label class="update-labels">Codigo</label>
+                        <input class="update-inputs" id="u-code" type="text">
+                    </div>
+                    <div class="update-section">
+                        <label class="update-labels">Descripcion</label>
+                        <input class="update-inputs" id="u-description" type="text">
+                    </div>
+                    <div class="update-section">   
+                        <label class="update-labels">Cantidad</label>
+                        <input class="update-inputs" id="u-quantity" type="number">
+                    </div> 
+                    <div>
+                        <ul class="update-button-section">
+                            <li id="update-button1" class="update-buttons"> 
+                                <a href="javascript:update()">                         
+                                <img src="../images/b_guardar.svg">
+                                <p>Actualizar</p>
+                                </a> 
+                            </li>
+                            <li id="update-button2" class="update-buttons">
+                                <a href="javascript:cancel_formUpdate()">
+                                <img src="../images/b_cancelar.svg">
+                                <p>Cancelar</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="update-search-section">
+                    <a href="javascript:search()">
+                    <img src="../images/b_search.svg">
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div id="id-container-delete" class="container-delete">
+            <p class="delete-title">Eliminar item</p>
+            <form>
+                <div class="delete-section">
+                    <label class="d-label">No.</label>
+                    <input class="d-input" id="d-no" type="number">
+                </div>
+                <div>
+                    <ul class="delete-button-section">
+                        <li id="delete-button1" class="delete-buttons">
+                            <a href="javascript:delete_()">
+                            <img src="../images/delete.svg">
+                            <p>Eliminar</p>
+                            </a>
+                        </li>
+                        <li id="delete-button2" class="delete-buttons">
+                            <a href="javascript:cancel_formDelete()">
+                            <img src="../images/b_cancelar.svg">
+                            <p>Cancelar</p>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <script src="../src/warehouse.js"></script>
+    </body>
+</html>

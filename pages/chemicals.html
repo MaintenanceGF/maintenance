@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Consumo de quimicos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mario Juarez">
+        <link rel="stylesheet" href="../css/resetcss.css">
+        <link rel="stylesheet" href="../css/chemicals.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body onload="load_chemicals()">
+        <header> 
+            <div>
+                <div class="header-logo">
+                    <img src="../images/Logo.jpg">
+                </div>
+                <div class="header-text">
+                    <h1>Consumo de quimicos</h1>
+                    <p>Lista de vales</p>
+                </div>  
+            </div>  
+            <div class="container-operations">
+                <nav>
+                    <ul>
+                        <li class="action1">
+                            <a href="javascript:create_form()">
+                            <img src="../images/add.svg">
+                            <p>Agregar</p>
+                            </a>
+                        </li>
+                        <li class="action2">
+                            <a href="javascript:delete_form()">
+                            <img src="../images/delete.svg">
+                            <p>Eliminar</p>
+                            </a>
+                        </li>
+                        <li class="action3">
+                            <a href="javascript:update_form()">
+                            <img src="../images/b_actualizar.svg">
+                            <p>Editar</p>
+                            </a>
+                        </li>
+                        <li class="action4">
+                            <a href="javascript:create_report()">
+                            <img src="../images/b_grafico.svg">
+                            <p>Reporte</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="id-container-filters" class="container-filters">
+            <div class="filter-section">  
+                <div>
+                    <label>Dia:</label>
+                    <input class="container-data" type="date" id="find_date">
+                </div>
+                <div class="filter-button">
+                    <a href="javascript:filter_day()">
+                        <img src="../images/b_search.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="filter-section">
+                <div>
+                    <label>Mes:</label>
+                    <select id="find_month" class="container-data">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="filter-button">
+                    <a href="javascript:filter_month()">
+                        <img src="../images/b_search.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="id-container-create" class="container-create"> 
+            <p class="create-title">Nuevo vale</p>
+            <form id="form1">
+                <div class="create-section">
+                    <label class="create-labels">Folio</label>
+                    <input class="create-inputs" id="c-folio" type="number">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Codigo</label>
+                    <input class="create-inputs" id="c-code" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Cantidad</label>
+                    <input class="create-inputs" id="c-quantity" type="number">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">linea</label>
+                    <select class="create-inputs" id="c-line">
+                        <option value="Linea 1">Linea 1</option>
+                        <option value="Linea 2">Linea 2</option>
+                        <option value="Linea 3">Linea 3</option>
+                        <option value="Linea 4">Linea 4</option>
+                        <option value="Linea 5">Linea 5</option>
+                        <option value="Linea 6">Linea 6</option>
+                        <option value="Linea 7">Linea 7</option>
+                        <option value="Linea 8">Linea 8</option>
+                        <option value="Linea 9">Linea 9</option>
+                        <option value="Linea 10">Linea 10</option>
+                        <option value="Linea 10B">Linea 10B</option>
+                        <option value="Linea 11">Linea 11</option>
+                        <option value="Linea 12">Linea 12</option>
+                        <option value="Linea 13">Linea 13</option>
+                        <option value="Linea 14">Linea 14</option>
+                        <option value="Linea 15">Linea 15</option>
+                        <option value="Mantenimiento">Mantenimiento</option>
+                        <option value="FW">FW</option>  
+                    </select>
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Fecha de solicitud</label>
+                    <input class="create-inputs" id="c-request_date" type="date">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Solicitante</label>
+                    <input class="create-inputs" id="c-requester" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Autorizador</label>
+                    <input class="create-inputs" id="c-authorized" type="text">
+                </div>
+                <div>
+                    <ul class="create-button-section">
+                        <li id="create-button1" class="create-buttons">
+                            <a href="javascript:create()">
+                            <img src="../images/b_guardar.svg">
+                            <p>Guardar</p> 
+                            </a>
+                        </li>
+                        <li id="create-button2" class="create-buttons">
+                            <a href="javascript:cancel_formCreate()">
+                            <img src="../images/b_cancelar.svg">
+                            <p>Cancelar</p>
+                            </a> 
+                        </li>
+                    </ul>                  
+                </div>
+            </form>
+        </div>
+        <div id="id-container-read" class="container-read"> 
+            <table id="table1"> 
+                <thead>
+                    <tr class="header_row">
+                        <th class="column-name">No.</th>
+                        <th class="column-name">Folio</th>
+                        <th class="column-name">Codigo</th>
+                        <th class="column-name">Descripcion</th>
+                        <th class="column-name">Cantidad</th>
+                        <th class="column-name">UOM</th>
+                        <th class="column-name">Alias</th>
+                        <th class="column-name">Linea</th>
+                        <th class="column-name">Equipo</th>
+                        <th class="column-name">Fecha de solicitud</th>
+                        <th class="column-name">Solicitante</th>
+                        <th class="column-name">Autorizador</th>
+                        <th class="column-name">Moneda</th>
+                        <th class="column-name">Precio unitario</th>
+                        <th class="column-name">Precio total</th>
+                        <th class="column-name">Mes</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                    <tr>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="id-container-update" class="container-update">
+            <p class="update-title">Actualizar registro</p>
+            <form class="update-form">
+                <div>
+                    <div class="update-section">
+                        <label class="update-labels">No.</label>
+                        <input class="update-inputs" id="u-no" type="number">
+                    </div> 
+                    <div class="update-section">  
+                        <label class="update-labels">Folio</label>
+                        <input class="update-inputs" id="u-folio" type="number">
+                    </div>
+                    <div class="update-section">
+                        <label class="update-labels">Codigo</label>
+                        <input class="update-inputs" id="u-code" type="text">
+                    </div>
+                    <div class="update-section">   
+                        <label class="update-labels">Cantidad</label>
+                        <input class="update-inputs" id="u-quantity" type="number">
+                    </div> 
+                    <div class="update-section">
+                        <label class="update-labels">Linea</label>
+                        <select class="update-inputs" id="u-line">
+                            <option value="Linea 1">Linea 1</option>
+                            <option value="Linea 2">Linea 2</option>
+                            <option value="Linea 3">Linea 3</option>
+                            <option value="Linea 4">Linea 4</option>
+                            <option value="Linea 5">Linea 5</option>
+                            <option value="Linea 6">Linea 6</option>
+                            <option value="Linea 7">Linea 7</option>
+                            <option value="Linea 8">Linea 8</option>
+                            <option value="Linea 9">Linea 9</option>
+                            <option value="Linea 10">Linea 10</option>
+                            <option value="Linea 10B">Linea 10B</option>
+                            <option value="Linea 11">Linea 11</option>
+                            <option value="Linea 12">Linea 12</option>
+                            <option value="Linea 13">Linea 13</option>
+                            <option value="Linea 14">Linea 14</option>
+                            <option value="Linea 15">Linea 15</option>
+                            <option value="Mantenimiento">Mantenimiento</option>
+                            <option value="FW">FW</option>  
+                        </select>
+                    </div>
+                    <div class="update-section">
+                        <label class="update-labels">Fecha de solicitud</label>
+                        <input class="update-inputs" id="u-request_date" type="date">
+                    </div>    
+                    <div class="update-section">
+                        <label class="update-labels">Solicitante</label>
+                        <input class="update-inputs" id="u-requester" type="text">
+                    </div>    
+                    <div class="update-section">
+                        <label class="update-labels">Autorizador</label>
+                        <input class="update-inputs" id="u-authorized" type="text">
+                    </div>
+                    <div>
+                        <ul class="update-button-section">
+                            <li id="update-button1" class="update-buttons"> 
+                                <a href="javascript:update()">                         
+                                <img src="../images/b_guardar.svg">
+                                <p>Actualizar</p>
+                                </a> 
+                            </li>
+                            <li id="update-button2" class="update-buttons">
+                                <a href="javascript:cancel_formUpdate()">
+                                <img src="../images/b_cancelar.svg">
+                                <p>Cancelar</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="update-search-section">
+                    <a href="javascript:search()">
+                    <img src="../images/b_search.svg">
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div id="id-container-delete" class="container-delete">
+            <p class="delete-title">Eliminar vale</p>
+            <form>
+                <div class="delete-section">
+                    <label class="d-label">No.</label>
+                    <input class="d-input" id="d-no" type="number">
+                </div>
+                <div>
+                    <ul class="delete-button-section">
+                        <li id="delete-button1" class="delete-buttons">
+                            <a href="javascript:delete_()">
+                            <img src="../images/delete.svg">
+                            <p>Eliminar</p>
+                            </a>
+                        </li>
+                        <li id="delete-button2" class="delete-buttons">
+                            <a href="javascript:cancel_formDelete()">
+                            <img src="../images/b_cancelar.svg">
+                            <p>Cancelar</p>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div id="id-container-report" class="container-report">
+            <p class="title-report">Resumen de consumos</p>
+            <div id="id-report1" class="report">
+                <div class="container-data-report">
+                    <div class="section-report">
+                        <label>Dia</label>
+                        <input class="input-report" id="day-report1" type="date">
+                    </div>
+                    <div class="section-report">
+                        <label>Total</label>
+                        <input class="input-report" id="total-report1" type="number">
+                    </div>
+                    <div class="section-report">
+                        <label>Equipo 1</label>
+                        <input class="input-report" id="team1-report1" type="number">
+                    </div>
+                    <div class="section-report">
+                        <label>Equipo 2</label>
+                        <input class="input-report" id="team2-report1" type="number">
+                    </div>
+                    <div class="section-report">
+                        <label>Mantenimiento</label>
+                        <input class="input-report" id="mtto-report1" type="number">
+                    </div>
+                </div>
+                <div class="container-button-report">
+                    <a href="javascript:sum_Day()">
+                    <img src="../images/b_refresh.svg">
+                    <p>Calcular</p>
+                    </a>
+                </div>
+            </div>
+            <div id="id-report2" class="report">
+                <div class="container-data-report">
+                    <div class="section-report">
+                        <label>Mes</label>
+                        <select class="input-report" id="month-report2">
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <div class="section-report">
+                        <label>Total</label>
+                        <input class="input-report" id="total-report2" type="number">
+                    </div>
+                    <div class="section-report">
+                        <label>Equipo 1</label>
+                        <input class="input-report" id="team1-report2" type="number">
+                    </div>
+                    <div class="section-report">
+                        <label>Equipo 2</label>
+                        <input class="input-report" id="team2-report2" type="number">
+                    </div>
+                    <div class="section-report">
+                        <label>Mantenimiento</label>
+                        <input class="input-report" id="mtto-report2" type="number">
+                    </div>
+                </div>
+                <div class="container-button-report">
+                    <a href="javascript:sum_Month()">
+                    <img src="../images/b_refresh.svg">
+                    <p>Calcular</p>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div id="cancel-button" class="container-button-report">
+                    <a href="javascript:cancel_report()">
+                    <img src="../images/b_cancelar.svg">
+                    <p>Cancelar</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script src="../src/chemicals.js"></script>
+    </body>
+</html>

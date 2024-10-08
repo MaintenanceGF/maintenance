@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Requisiciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Mario Juarez">
+        <link rel="stylesheet" href="../css/resetcss.css">
+        <link rel="stylesheet" href="../css/requisitions.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    <body onload="load_requisitions()">
+        <header> 
+            <div>
+                <div class="header-logo">
+                    <img src="../images/Logo.jpg">
+                </div>
+                <div class="header-text">
+                    <h1>Requisiciones</h1>
+                    <p>Lista de requisiciones</p>
+                </div>  
+            </div>  
+            <div class="container-operations">
+                <nav>
+                    <ul>
+                        <li class="action1">
+                            <a href="javascript:create_form()">
+                            <img src="../images/add.svg">
+                            <p>Agregar</p>
+                            </a>
+                        </li>
+                        <li class="action2">
+                            <a href="javascript:delete_form()">
+                            <img src="../images/delete.svg">
+                            <p>Eliminar</p>
+                            </a>
+                        </li>
+                        <li class="action3">
+                            <a href="javascript:update_form()">
+                            <img src="../images/b_actualizar.svg">
+                            <p>Editar</p>
+                            </a>
+                        </li>
+                        <li class="action4">
+                            <a href="javascript:create_chart()">
+                            <img src="../images/b_grafico.svg">
+                            <p>Reporte</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="id-container-filters" class="container-filters">
+            <div class="filter-section1">
+                <ul>
+                    <li class="filters">
+                        <a href="javascript:filter_tracking1()">
+                        <p>Sin PO</p>
+                        </a>
+                    </li>
+                    <li class="filters">
+                        <a href="javascript:filter_tracking2()">
+                        <p>Con PO</p>
+                        </a>
+                    </li>
+                    <li class="filters">
+                        <a href="javascript:filter_status1()">
+                        <p>En tiempo</p>
+                        </a>
+                    </li>
+                    <li class="filters">
+                        <a href="javascript:filter_status2()">
+                        <p>Vencido</p>
+                        </a>
+                    </li>
+                    <li class="filters">
+                        <a href="javascript:filter_status3()">
+                        <p>Cerrado</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter-section2">  
+                <div>
+                    <label>Proveedor:</label>
+                    <input type="text" id="find_supplier">
+                </div>
+                <div class="filter-button">
+                    <a href="javascript:filter_supplier()">
+                        <img src="../images/b_search.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="id-container-create" class="container-create"> 
+            <p class="create-title">Nueva requisicion</p>
+            <form id="form1">
+                <div class="create-section">
+                    <label class="create-labels">Requisicion</label>
+                    <input class="create-inputs" id="c-requisition" type="number">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Linea</label>
+                    <input class="create-inputs" id="c-line" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Descripcion</label>
+                    <input class="create-inputs" id="c-description" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Proveedor</label>
+                    <input class="create-inputs" id="c-supplier" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Solicitante</label>
+                    <input class="create-inputs" id="c-requester" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Comprador</label>
+                    <input class="create-inputs" id="c-buyer" type="text">
+                </div>
+                <div class="create-section">
+                    <label class="create-labels">Nota</label>
+                    <input class="create-inputs" id="c-note" type="text">
+                </div>
+                <div>
+                    <ul class="create-button-section">
+                        <li id="create-button1" class="create-buttons">
+                            <a href="javascript:create()">
+                            <img src="../images/b_guardar.svg">
+                            <p>Guardar</p> 
+                            </a>
+                        </li>
+                        <li id="create-button2" class="create-buttons">
+                            <a href="javascript:cancel_formCreate()">
+                            <img src="../images/b_cancelar.svg">
+                            <p>Cancelar</p>
+                            </a> 
+                        </li>
+                    </ul>                  
+                </div>
+            </form>
+        </div>
+        <div id="id-container-read" class="container-read"> 
+            <table id="table1"> 
+                <thead>
+                    <tr class="header_row">
+                        <th class="column-name">Requisicion</th>
+                        <th class="column-name">PO</th>
+                        <th class="column-name">Estado</th>
+                        <th class="column-name">Linea</th>
+                        <th class="column-name">Descripcion</th>
+                        <th class="column-name">Proveedor</th>
+                        <th class="column-name">Solicitante</th>
+                        <th class="column-name">Comprador</th>
+                        <th class="column-name">Fecha de llegada</th>
+                        <th class="column-name">Seguimiento</th>
+                        <th class="column-name">Avance</th>
+                        <th class="column-name">Estado de entrega</th>
+                        <th class="column-name">Nota</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable">
+                    <tr>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                        <td class="row-base"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="id-container-update" class="container-update">
+            <p class="update-title">Actualizar registro</p>
+            <form class="update-form">
+                <div>
+                    <div class="update-section">
+                        <label class="update-labels">Requisicion</label>
+                        <input class="update-inputs" id="u-requisition" type="number">
+                    </div> 
+                    <div class="update-section">  
+                        <label class="update-labels">PO</label>
+                        <input class="update-inputs" id="u-po" type="number">
+                    </div>
+                    <div class="update-section">
+                        <label class="update-labels">Estado</label>
+                        <select class="update-inputs" id="u-status">
+                            <option value=" "> </option>
+                            <option value="Incomplete">Incomplete</option>
+                            <option value="Rejected">Rejected</option>
+                            <option value="Returned">Returned</option>
+                            <option value="In process">In process</option>
+                            <option value="Approved">Approved</option>
+                        </select>
+                    </div>
+                    <div class="update-section">
+                        <label class="update-labels">Linea</label>
+                        <input class="update-inputs" id="u-line" type="text">
+                    </div>
+                    <div class="update-section">   
+                        <label class="update-labels">Descripcion</label>
+                        <input class="update-inputs" id="u-description" type="text">
+                    </div> 
+                    <div class="update-section">
+                        <label class="update-labels">Proveedor</label>
+                        <input class="update-inputs" id="u-supplier" type="text">
+                    </div>
+                    <div class="update-section">
+                        <label class="update-labels">Solicitante</label>
+                        <input class="update-inputs" id="u-requester" type="text">
+                    </div>    
+                    <div class="update-section">
+                        <label class="update-labels">Comprador</label>
+                        <input class="update-inputs" id="u-buyer" type="text">
+                    </div>    
+                    <div class="update-section">
+                        <label class="update-labels">Fecha de llegada</label>
+                        <input class="update-inputs" id="u-arrived_date" type="date">
+                    </div>
+                    <div class="update-section">
+                        <label class="update-labels">Avance</label>
+                        <input class="update-inputs" id="u-progress" type="number">
+                    </div>     
+                    <div class="update-section">
+                        <label class="update-labels">Nota</label>
+                        <input class="update-inputs" id="u-note" type="text">
+                    </div>
+                    <div>
+                        <ul class="update-button-section">
+                            <li id="update-button1" class="update-buttons"> 
+                                <a href="javascript:update()">                         
+                                <img src="../images/b_guardar.svg">
+                                <p>Actualizar</p>
+                                </a> 
+                            </li>
+                            <li id="update-button2" class="update-buttons">
+                                <a href="javascript:cancel_formUpdate()">
+                                <img src="../images/b_cancelar.svg">
+                                <p>Cancelar</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="update-search-section">
+                    <a href="javascript:search()">
+                    <img src="../images/b_search.svg">
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div id="id-container-delete" class="container-delete">
+            <p class="delete-title">Eliminar requisicion</p>
+            <form>
+                <div class="delete-section">
+                    <label class="d-label">Requisicion</label>
+                    <input class="d-input" id="d-requisition" type="number">
+                </div>
+                <div>
+                    <ul class="delete-button-section">
+                        <li id="delete-button1" class="delete-buttons">
+                            <a href="javascript:delete_()">
+                            <img src="../images/delete.svg">
+                            <p>Eliminar</p>
+                            </a>
+                        </li>
+                        <li id="delete-button2" class="delete-buttons">
+                            <a href="javascript:cancel_formDelete()">
+                            <img src="../images/b_cancelar.svg">
+                            <p>Cancelar</p>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div id="id-container-chart" class="container-chart">
+            <div id="id-section-charts" class="section-charts">
+                <div>
+                    <p class="chart-title">Estado de requisiciones</p>
+                    <div class="donutcharts" id="donutchart1"></div>
+                </div>
+                <div>
+                    <p class="chart-title">Seguimiento de requisiciones</p>
+                    <div class="donutcharts" id="donutchart2"></div>
+                </div>
+                <div>
+                    <p class="chart-title">Estado de entregas</p>
+                    <div class="donutcharts" id="donutchart3"></div>
+                </div>
+            </div>
+            <div id="id-section-button-chart" class="chart-button-section">
+                <ul>
+                    <li id="chart-button1" class="chart-buttons">
+                        <a href="javascript:countOrders()">
+                        <img src="../images/b_refresh.svg">
+                        <p>Actualizar</p>
+                        </a>
+                    </li>
+                    <li id="chart-button2" class="chart-buttons">
+                        <a href="javascript:cancel_chart()">
+                        <img src="../images/b_cancelar.svg">
+                        <p>Cancelar</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="../src/requisitions.js"></script>
+    </body>
+</html>
