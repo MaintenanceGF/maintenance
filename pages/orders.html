@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Mario Juarez">
-        <link rel="stylesheet" href="css/resetcss.css">
-        <link rel="stylesheet" href="css/orders.css">
+        <link rel="stylesheet" href="../css/resetcss.css">
+        <link rel="stylesheet" href="../css/orders.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
         <header> 
             <div>
                 <div class="header-logo">
-                    <img src="images/Logo.jpg">
+                    <img src="../images/Logo.jpg">
                 </div>
                 <div class="header-text">
                     <h1>Pedidos especiales</h1>
@@ -28,25 +28,25 @@
                     <ul>
                         <li class="action1">
                             <a href="javascript:create_form()">
-                            <img src="images/add.svg">
+                            <img src="../images/add.svg">
                             <p>Agregar</p>
                             </a>
                         </li>
                         <li class="action2">
                             <a href="javascript:delete_form()">
-                            <img src="images/delete.svg">
+                            <img src="../images/delete.svg">
                             <p>Eliminar</p>
                             </a>
                         </li>
                         <li class="action3">
                             <a href="javascript:update_form()">
-                            <img src="images/b_actualizar.svg">
+                            <img src="../images/b_actualizar.svg">
                             <p>Editar</p>
                             </a>
                         </li>
                         <li class="action4">
                             <a href="javascript:create_chart()">
-                            <img src="images/b_grafico.svg">
+                            <img src="../images/b_grafico.svg">
                             <p>Reporte</p>
                             </a>
                         </li>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="filter-button">
                     <a href="javascript:filter_supplier()">
-                        <img src="images/b_search.svg">
+                        <img src="../images/b_search.svg">
                     </a>
                 </div>
             </div>
@@ -152,13 +152,13 @@
                     <ul class="create-button-section">
                         <li id="create-button1" class="create-buttons">
                             <a href="javascript:create()">
-                            <img src="images/b_guardar.svg">
+                            <img src="../images/b_guardar.svg">
                             <p>Guardar</p> 
                             </a>
                         </li>
                         <li id="create-button2" class="create-buttons">
                             <a href="javascript:cancel_formCreate()">
-                            <img src="images/b_cancelar.svg">
+                            <img src="../images/b_cancelar.svg">
                             <p>Cancelar</p>
                             </a> 
                         </li>
@@ -284,13 +284,13 @@
                         <ul class="update-button-section">
                             <li id="update-button1" class="update-buttons"> 
                                 <a href="javascript:update()">                         
-                                <img src="images/b_guardar.svg">
+                                <img src="../images/b_guardar.svg">
                                 <p>Actualizar</p>
                                 </a> 
                             </li>
                             <li id="update-button2" class="update-buttons">
                                 <a href="javascript:cancel_formUpdate()">
-                                <img src="images/b_cancelar.svg">
+                                <img src="../images/b_cancelar.svg">
                                 <p>Cancelar</p>
                                 </a>
                             </li>
@@ -299,7 +299,7 @@
                 </div>
                 <div class="update-search-section">
                     <a href="javascript:search()">
-                    <img src="images/b_search.svg">
+                    <img src="../images/b_search.svg">
                     </a>
                 </div>
             </form>
@@ -315,13 +315,13 @@
                     <ul class="delete-button-section">
                         <li id="delete-button1" class="delete-buttons">
                             <a href="javascript:delete_()">
-                            <img src="images/delete.svg">
+                            <img src="../images/delete.svg">
                             <p>Eliminar</p>
                             </a>
                         </li>
                         <li id="delete-button2" class="delete-buttons">
                             <a href="javascript:cancel_formDelete()">
-                            <img src="images/b_cancelar.svg">
+                            <img src="../images/b_cancelar.svg">
                             <p>Cancelar</p>
                             </a>
                         </li> 
@@ -344,20 +344,20 @@
                 <ul>
                     <li id="chart-button1" class="chart-buttons">
                         <a href="javascript:countOrders()">
-                        <img src="images/b_refresh.svg">
+                        <img src="../images/b_refresh.svg">
                         <p>Actualizar</p>
                         </a>
                     </li>
                     <li id="chart-button2" class="chart-buttons">
                         <a href="javascript:cancel_chart()">
-                        <img src="images/b_cancelar.svg">
+                        <img src="../images/b_cancelar.svg">
                         <p>Cancelar</p>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <script src="src/orders.js"></script>
+        <script src="../src/orders.js"></script>
     </body>
     
 </html>
