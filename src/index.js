@@ -29,7 +29,7 @@ button1.onclick = function() {
       const findPassword = findUser[2].value;
       
       if(password1 === findPassword) {
-        location.href = '../pages/main.html';
+        location.href = 'pages/main.html';
       } else {
         alert('Contraseña incorrecta');
       }
